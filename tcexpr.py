@@ -93,6 +93,7 @@ class ThreadApplySchema(threading.Thread):
 
 class PyApp(gtk.Window):
     version = 1.0
+    title = 'TurboCRM Cluster Express'
     emptyRow = ('', '', '', '', '', True, True)
     schema = Schema()
     restart = False
@@ -133,6 +134,7 @@ class PyApp(gtk.Window):
         self.connect("destroy", self.onDestroy)
         self.set_size_request(640, 480)
         self.set_position(gtk.WIN_POS_CENTER)
+        self.set_title("%s v%s" % (self.title, self.version))
 
         uimanager = gtk.UIManager()
         accelgroup = uimanager.get_accel_group()
@@ -497,11 +499,11 @@ class PyApp(gtk.Window):
         ''' Pop up the famous about dialog
         '''
         dlg = gtk.AboutDialog()
-        dlg.set_program_name('TurboCRM Cluster Express')
+        dlg.set_program_name(self.title)
         dlg.set_version(str(self.version))
         dlg.set_copyright(_('Author: Li Dong <lidonga@ufida.com>'))
         dlg.set_comments(_('Cluster configuration tool for TurboCRM'))
-        dlg.set_website('http://0x3f.org')
+        dlg.set_website('http://xbot.github.com/TurboCRM-Cluster-Express/')
         dlg.run()
         dlg.destroy()
 

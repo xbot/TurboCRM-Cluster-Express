@@ -1,0 +1,25 @@
+TurboCRM Cluster Express
+========================
+
+TurboCRM Cluster Express is a cluster configuration tool for Ufida TurboCRM.
+
+With both CLI and GUI are supported, this tool intends to make life easier while setting up clusters.
+
+Features
+--------
+
+* Commandline and graphic user interface
+* Cluster schemas can be saved to files for future reuse
+
+Bug tracker
+--------
+
+Have a bug? Please create an issue here on GitHub!
+
+https://github.com/xbot/TurboCRM-Cluster-Express/issues
+
+Author
+--------
+
+Li Dong <lidonga@ufida.com>
+

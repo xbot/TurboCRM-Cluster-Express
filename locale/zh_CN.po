@@ -1,0 +1,209 @@
+# Chinese translations for PACKAGE package.
+# Copyright (C) 2012 ORGANIZATION
+#  <lenin.lee@gmail.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2012-04-07 18:11+CST\n"
+"PO-Revision-Date: 2012-04-06 00:52+0800\n"
+"Last-Translator:  <lenin.lee@gmail.com>\n"
+"Language-Team: Chinese (simplified)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: event/listeners.py:70
+msgid "Unknown server type !"
+msgstr "未知的服务器类型！"
+
+#: event/listeners.py:78
+msgid "Invalid hostname !"
+msgstr "主机名格式非法！"
+
+#: event/listeners.py:86
+msgid "Invalid IP address !"
+msgstr "IP地址格式非法！"
+
+#: event/listeners.py:97 tcexpr.py:337 tcexpr.py:340 tcexpr.py:343
+msgid "Invalid path !"
+msgstr "错误的路径！"
+
+#: tcexpr.py:143
+msgid "_File"
+msgstr "文件(_F)"
+
+#: tcexpr.py:144
+msgid "_Open"
+msgstr "打开(_O)"
+
+#: tcexpr.py:145
+msgid "_Save"
+msgstr "保存(_S)"
+
+#: tcexpr.py:146
+msgid "_Exit"
+msgstr "退出(_E)"
+
+#: tcexpr.py:147
+msgid "_Edit"
+msgstr "编辑(_E)"
+
+#: tcexpr.py:148 tcexpr.py:178
+msgid "_Add Server"
+msgstr "添加服务器(_A)"
+
+#: tcexpr.py:149 tcexpr.py:181
+msgid "_Delete Server"
+msgstr "删除服务器(_D)"
+
+#: tcexpr.py:150
+msgid "_Validate Schema"
+msgstr "校验集群方案(_V)"
+
+#: tcexpr.py:151
+msgid "_Apply Schema"
+msgstr "应用集群方案(_A)"
+
+#: tcexpr.py:152
+msgid "_Backup & Restore"
+msgstr "备份与恢复(_B)"
+
+#: tcexpr.py:153
+msgid "Backup _Cluster Files"
+msgstr "备份集群文件(_C)"
+
+#: tcexpr.py:154
+msgid "_Restore Cluster Files"
+msgstr "恢复集群文件(_R)"
+
+#: tcexpr.py:155
+msgid "_Help"
+msgstr "帮助(_H)"
+
+#: tcexpr.py:156
+msgid "_About"
+msgstr "关于(_A)"
+
+#: tcexpr.py:184
+msgid "Va_lidate Schema"
+msgstr "校验集群方案(_L)"
+
+#: tcexpr.py:187
+msgid "A_pply Schema"
+msgstr "应用集群方案(_P)"
+
+#: tcexpr.py:211
+msgid "Type"
+msgstr "服务器类型"
+
+#: tcexpr.py:220
+msgid "Host Name"
+msgstr "主机名"
+
+#: tcexpr.py:228
+msgid "IP Address"
+msgstr "IP地址"
+
+#: tcexpr.py:236
+msgid "Shared Directory"
+msgstr "共享目录"
+
+#: tcexpr.py:274
+msgid "Please select a row to delete !"
+msgstr "请先选中要删除的行！"
+
+#: tcexpr.py:288
+msgid "Schema is valid !"
+msgstr "方案通过校验！"
+
+#: tcexpr.py:298
+msgid "File server should not be more than one !"
+msgstr "文件服务器最多只能有一个！"
+
+#: tcexpr.py:302 tcexpr.py:308
+msgid "Master server must be one, no more, no less !"
+msgstr "主服务器必须唯一！"
+
+#: tcexpr.py:305
+msgid "Dirty or empty row exists !"
+msgstr "存在空行或未指定服务器类型的行！"
+
+#: tcexpr.py:311
+msgid "Slaves are missing !"
+msgstr "从属服务器必须有一台以上！"
+
+#: tcexpr.py:315
+msgid "Hostnames must not be empty !"
+msgstr "主机名不允许空值！"
+
+#: tcexpr.py:319
+msgid "Hostnames cannot be duplicated !"
+msgstr "主机名不允许重复！"
+
+#: tcexpr.py:323
+msgid "IP addresses must not be empty !"
+msgstr "IP地址不允许为空！"
+
+#: tcexpr.py:327
+msgid "IP addresses cannot be duplicated !"
+msgstr "IP地址不允许重复！"
+
+#: tcexpr.py:331
+msgid "Shared paths must not be empty !"
+msgstr "文件共享目录路径不允许为空！"
+
+#: tcexpr.py:353 tcexpr.py:383
+msgid "Open.."
+msgstr "打开.."
+
+#: tcexpr.py:359 tcexpr.py:389
+msgid "Schema"
+msgstr "TurboCRM集群方案"
+
+#: tcexpr.py:365 tcexpr.py:395
+msgid "All files"
+msgstr "所有文件"
+
+#: tcexpr.py:380
+msgid "Schema saved to %s."
+msgstr "保存集群方案到%s。"
+
+#: tcexpr.py:420
+msgid "The current machine is not in the schema !"
+msgstr "本机不在集群方案中，不能应用方案到本机！"
+
+#: tcexpr.py:437
+msgid "Job done !"
+msgstr "本机配置成功！"
+
+#: tcexpr.py:448
+msgid "Please enter <b>root</b> password:"
+msgstr "请输入<b>root</b>用户的密码："
+
+#: tcexpr.py:452
+msgid "Password:"
+msgstr "密码："
+
+#: tcexpr.py:454
+msgid "This will be used to synchronize files to the file server."
+msgstr "此密码用于同步文件到文件共享服务器。"
+
+#: tcexpr.py:470
+msgid "Applying schema ..."
+msgstr "正在应用集群方案到本机……"
+
+#: tcexpr.py:502
+msgid "Author: Li Dong <lidonga@ufida.com>"
+msgstr "开发：李栋 <lidonga@ufida.com>"
+
+#: tcexpr.py:503
+msgid "Cluster configuration tool for TurboCRM"
+msgstr "TurboCRM集群配置工具"
+
+#: tcexpr.py:533
+msgid "Not implemented !"
+msgstr "此功能未实现！"
+

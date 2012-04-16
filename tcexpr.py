@@ -42,7 +42,7 @@ class ThreadApplySchema(threading.Thread):
             self.__exec(cmd)
         elif me[COL_COMBO_KEY] == 'master':
             if me is fsrv:
-                cmd = "%s -m filesvr -s %s" % (absscript, ','.join(srvlst))
+                cmd = "%s -m filesvr -d %s -s %s" % (absscript, me[COL_PATH], ','.join(srvlst))
                 self.__exec(cmd)
             else:
                 cmd = "%s -m backbone -d %s -s %s" % (absscript, me[COL_PATH], fsrvstr)

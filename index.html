@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="TurboCRM Cluster Express : A cluster configuration tool for TurboCRM" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>TurboCRM Cluster Express</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/xbot/TurboCRM-Cluster-Express">Fork Me on GitHub</a>
+
+          <h1 id="project_title">TurboCRM Cluster Express</h1>
+          <h2 id="project_tagline">A cluster configuration tool for TurboCRM</h2>
+
+          <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/xbot/TurboCRM-Cluster-Express/zipball/master">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/xbot/TurboCRM-Cluster-Express/tarball/master">Download this project as a tar.gz file</a>
+          </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>关于TurboCRM Cluster Express</h3>
+
+<p>TurboCRM Cluster Express（以下简称<strong>TCE</strong>）是TurboCRM的集群实施工具，是对集群配置脚本“cluster.sh”的图形界面封装，目的是通过可视化的操作简化在Linux平台部署TurboCRM集群的工作。</p>
+
+<p><img src="http://pic.yupoo.com/leninlee/BSfJUW1x/medish.jpg" alt="illustration"></p>
+
+<p>你可以在本页面获取TCE的最新版。</p>
+
+<h3>依赖关系</h3>
+
+<p>操作系统必须满足以下依赖关系才能运行TCE：</p>
+
+<ol>
+<li>Python 2.6/2.7（不支持Python 3）</li>
+<li>PyGTK 2.4+</li>
+<li>python-netifaces</li>
+<li>python-pexpect</li>
+</ol><h3>安装</h3>
+
+<p>以标准安装的CentOS 6.x为例，安装步骤如下：</p>
+
+<ol>
+<li>到<a href="http://rpmfind.net/">这里</a>搜索并下载与操作系统版本对应的python-devel的RPM包，上传到服务器并安装：
+<code>rpm -ivh python-devel-2.6.6-29.el6.x86_64.rpm</code>
+</li>
+<li>到这里下载与Python版本对应的setuptools的安装包，例如_python -V_返回2.6.2,下载<strong>setuptools-0.6c11-py2.6.egg</strong>，然后安装：
+<code>sh setuptools-0.6c11-py2.6.egg</code>
+</li>
+<li>到<a href="http://alastairs-place.net/projects/netifaces/netifaces-0.8.tar.gz">这里</a>下载netifaces的源码包，在服务器上解压后安装：
+<code>python setup.py install</code>
+</li>
+<li>到<a href="http://sourceforge.net/projects/pexpect/files/">这里</a>下载pexpect的源码包，在服务器上解压后安装：
+<code>python setup.py install</code>
+</li>
+<li>在本页面下载TCE最新的源码包，在服务器上解压后运行：
+<code>python tcexpr.py</code>
+</li>
+</ol><h3>使用说明</h3>
+
+<p>以最常见的场景为例，对两台应用服务器配置TurboCRM集群。</p>
+
+<ol>
+<li>在各应用服务器上安装TurboCRM</li>
+<li>运行TCE</li>
+<li>点击按钮“<strong>添加服务器</strong>”，列表中增加一个空行：
+
+<ul>
+<li>鼠标单击该行“<strong>服务器类型</strong>”列的单元格，选择“<strong>Master</strong>”</li>
+<li>同样，“<strong>主机名</strong>”列填写作为集群主服务器的主机的主机名</li>
+<li>“<strong>IP地址</strong>”列填写对应的IP地址</li>
+<li>“<strong>共享目录</strong>”列填写“<strong>/opt/turbocrm</strong>”</li>
+</ul>
+</li>
+<li>点击按钮“<strong>添加服务器</strong>”，列表中增加一行：
+
+<ul>
+<li>“<strong>服务器类型</strong>”选择“<strong>Slave</strong>”</li>
+<li>“<strong>主机名</strong>”填写作为集群从属服务器的主机的主机名</li>
+<li>“<strong>IP地址</strong>”填写对应的IP地址</li>
+<li>“<strong>共享目录</strong>”列填写“<strong>crmsrv1:/opt/turbocrm</strong>”，注意，应将“<strong>crmsrv1</strong>”替换成主服务器的主机名</li>
+</ul>
+</li>
+<li>点击按钮“<strong>校验集群方案</strong>”，校验是否合法</li>
+<li>点击菜单“<strong>文件</strong>”→“<strong>保存</strong>”，保存集群方案到文件</li>
+<li>复制集群方案文件到主服务器上，运行TCE并打开该方案，点击按钮“<strong>应用集群方案</strong>”，完成对主服务器的配置</li>
+<li>复制集群方案文件到从属服务器上，运行TCE并打开该方案，点击按钮“<strong>应用集群方案</strong>”，完成对从属服务器的配置</li>
+</ol><h3>问题支持</h3>
+
+<p>如果发现TCE有什么错误或需要哪些改进，请到<a href="https://github.com/xbot/TurboCRM-Cluster-Express/issues">这里</a>提交问题。</p>
+
+<h3>更新记录</h3>
+
+<p><strong>2012-04-16 v1.0.1</strong></p>
+
+<blockquote>
+<ol>
+<li>Issue 1</li>
+</ol>
+</blockquote>
+
+<p><strong>2012-04-07 v1.0</strong></p>
+
+<blockquote>
+<ol>
+<li>首发</li>
+</ol>
+</blockquote>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">TurboCRM Cluster Express maintained by <a href="https://github.com/xbot">xbot</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>

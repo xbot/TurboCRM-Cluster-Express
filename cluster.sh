@@ -147,11 +147,14 @@ exportdirs()
         fi
     done
 
+    exportfs -ar
+
     return 0
 }
 restartnfs()
 {
-    if grep CentOS /etc/issue > /dev/null 2>&1; then
+    if grep "CentOS" /etc/issue > /dev/null 2>&1 || \
+        grep "Red Hat" /etc/issue > /dev/null 2>&1; then
         chkconfig --level 2345 nfs on
         service nfs restart
     fi

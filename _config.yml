@@ -1,4 +1,4 @@
 markdown: maruku
 auto: true
-permalink: pretty
-exclude:
+permalink: none
+baseurl: /tce

@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<div class="post">
+    <h2><a href="{{ post.url }}">{{ page.title }}</a></h2>
+  
+    <div class="body">
+        {{ content }}
+    </div>
+    <div class="meta">
+        Posted on <a href="{{ page.url }}">{{ page.date | date_to_string }}</a>
+    </div>
+    
+</div>

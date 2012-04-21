@@ -1,0 +1,67 @@
+--- 
+layout: post
+title: 关于TurboCRM Cluster Express
+category: blog
+---
+
+TurboCRM Cluster Express（以下简称**TCE**）是TurboCRM的集群实施工具，是对集群配置脚本“cluster.sh”的图形界面封装，目的是通过可视化的操作简化在Linux平台部署TurboCRM集群的工作。
+
+![illustration](http://pic.yupoo.com/leninlee/BSfJUW1x/medish.jpg)
+
+你可以在本页面获取TCE的最新版。
+
+### 依赖关系
+
+操作系统必须满足以下依赖关系才能运行TCE：
+
+1. Python 2.6/2.7（不支持Python 3）
+1. PyGTK 2.4+
+1. python-netifaces
+1. python-pexpect
+
+### 安装
+
+以标准安装的CentOS 6.x为例，安装步骤如下：
+
+1. 到[这里](http://rpmfind.net/)搜索并下载与操作系统版本对应的python-devel的RPM包，上传到服务器并安装：
+`rpm -ivh python-devel-2.6.6-29.el6.x86_64.rpm`
+1. 到[这里](http://pypi.python.org/pypi/setuptools#downloads)下载与Python版本对应的setuptools的安装包，例如_python -V_返回2.6.2,下载**setuptools-0.6c11-py2.6.egg**，然后安装：
+`sh setuptools-0.6c11-py2.6.egg`
+1. 到[这里](http://alastairs-place.net/projects/netifaces/netifaces-0.8.tar.gz)下载netifaces的源码包，在服务器上解压后安装：
+`python setup.py install`
+1. 到[这里](http://sourceforge.net/projects/pexpect/files/)下载pexpect的源码包，在服务器上解压后安装：
+`python setup.py install`
+1. 在本页面下载TCE最新的源码包，在服务器上解压后运行：
+`python tcexpr.py`
+
+### 使用说明
+
+以最常见的场景为例，对两台应用服务器配置TurboCRM集群。
+
+1. 在各应用服务器上安装TurboCRM
+1. 运行TCE
+1. 点击按钮“**添加服务器**”，列表中增加一个空行：
+  - 鼠标单击该行“**服务器类型**”列的单元格，选择“**Master**”
+  - 同样，“**主机名**”列填写作为集群主服务器的主机的主机名
+  - “**IP地址**”列填写对应的IP地址
+  - “**共享目录**”列填写“**/opt/turbocrm**”
+1. 点击按钮“**添加服务器**”，列表中增加一行：
+  - “**服务器类型**”选择“**Slave**”
+  - “**主机名**”填写作为集群从属服务器的主机的主机名
+  - “**IP地址**”填写对应的IP地址
+  - “**共享目录**”列填写“**crmsrv1:/opt/turbocrm**”，注意，应将“**crmsrv1**”替换成主服务器的主机名
+1. 点击按钮“**校验集群方案**”，校验是否合法
+1. 点击菜单“**文件**”→“**保存**”，保存集群方案到文件
+1. 复制集群方案文件到主服务器上，运行TCE并打开该方案，点击按钮“**应用集群方案**”，完成对主服务器的配置
+1. 复制集群方案文件到从属服务器上，运行TCE并打开该方案，点击按钮“**应用集群方案**”，完成对从属服务器的配置
+
+### 问题支持
+如果发现TCE有什么错误或需要哪些改进，请到[这里](https://github.com/xbot/TurboCRM-Cluster-Express/issues)提交问题。
+
+### 更新记录
+
+**2012-04-16 v1.0.1**
+> 1. Issue 1
+
+**2012-04-07 v1.0**
+> 1. 首发
